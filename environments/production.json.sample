@@ -1,0 +1,6 @@
+{
+  "fqdn": "production.example.com",
+  "sub": "production",
+  "cloudflare_zone_id": "aabbccddeeff112233",
+  "spa_routing": true
+}

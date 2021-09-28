@@ -1,0 +1,8 @@
+.cache
+dist
+node_modules
+environments/*
+.env*
+terraform/terraform.tfstate.d
+terraform/.terraform*
+.DS_Store

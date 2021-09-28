@@ -1,0 +1,11 @@
+#!/usr/bin/env ruby
+require_relative "environment"
+
+if cmd("rm -rf .cache && NODE_ENV=production MODE=#{@environment} npm run build")
+  sync_cmd = "aws s3 sync ./dist s3://#{@config['fqdn']} --acl private"
+  cmd(sync_cmd)
+  exit(0)
+else
+  puts "Build failed"
+  exit(1)
+end

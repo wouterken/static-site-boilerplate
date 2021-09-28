@@ -1,0 +1,8 @@
+#!/usr/bin/env ruby
+
+require_relative "environment"
+
+cmd("terraform -chdir=#{@terraform_dir} init > /dev/null 2>&1")
+cmd("terraform -chdir=#{@terraform_dir} workspace new #{@environment} > /dev/null 2>&1")
+tf_cmd("apply #{@auto_approve} ")
+exit(0)

@@ -1,0 +1,4 @@
+#!/usr/bin/env ruby
+
+require_relative "environment"
+tf_cmd("destroy #{@auto_approve}") ? exit(0) : exit(1)
